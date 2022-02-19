@@ -24,18 +24,24 @@ class Session2b_WordCounterTest {
     void shouldCountGreenTwice() {
         WordCounter counter = new WordCounter("green bar green hat");
         // TODO Check that 2, counter.countOf("green").
+
+        assertEquals(2, counter.countOf("green"));
     }
 
     @Test
     void shouldNotCountCapitalizedWord() {
         WordCounter counter = new WordCounter("green bar green hat");
         // TODO Check that 1, counter.countOf("HAT") is not equal.
+
+        assertNotEquals(1, counter.countOf("HAT"));
     }
 
     @Test
     void shouldFindUniqueWordAsSequence() {
         WordCounter counter = new WordCounter("green green");
         // TODO Check that Arrays.asList("green"), counter.uniqueWordsAsSequence() is iterable equal.
+
+        assertIterableEquals (Arrays.asList("green"), counter.uniqueWordsAsSequence());
     }
     
     @Test
